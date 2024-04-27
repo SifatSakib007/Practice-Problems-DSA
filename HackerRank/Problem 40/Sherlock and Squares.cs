@@ -14,7 +14,6 @@ using System;
 
 class Result
 {
-
     /*
      * Complete the 'squares' function below.
      *
@@ -26,22 +25,18 @@ class Result
 
     public static int squares(int a, int b)
     {
-int count = 0;
-    
-    // Iterate through each integer from a to b
-    for (int i = a; i <= b; i++)
+    // Calculate the integer square roots of a and b
+    int sqrtA = (int)Math.Sqrt(a);
+    int sqrtB = (int)Math.Sqrt(b);
+
+    // Adjust the square root value if it's less than the square of the integer
+    if (sqrtA * sqrtA < a) 
     {
-        // Check if the square root of the integer is an integer
-        double root = Math.Sqrt(i);
-        if (root == (int)root)
-        {
-            // Increment the counter if the integer is a perfect square
-            count++;
-        }
+        sqrtA++;
     }
-    
-    // Return the count of square integers
-    return count;
+
+    // Return the count of integers between sqrtA and sqrtB (inclusive)
+    return Math.Max(0, sqrtB - sqrtA + 1);
 
     }
 
