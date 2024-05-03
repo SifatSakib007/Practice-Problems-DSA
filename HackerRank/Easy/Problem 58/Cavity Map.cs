@@ -24,7 +24,7 @@ class Result
 
     public static List<string> cavityMap(List<string> grid)
     {
-
+int n = grid.Count;
     // Iterate through each cell of the grid
     for (int i = 1; i < n - 1; i++)
     {
@@ -46,7 +46,7 @@ class Result
 
     return grid;
 }
-    }
+    
 
 }
 
@@ -74,4 +74,3 @@ class Solution
         textWriter.Close();
     }
 }
-
