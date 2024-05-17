@@ -1,0 +1,12 @@
+email : sifatsakib26@gmail.com
+username : sifatsakib
+pass : Sifat@@22
+
+My Local DB server name : DESKTOP-36RFDVG
+Database Name : TrackExpenseDB
+Db Host Name / Server Name: 
+SQL Username: 
+Db Pass : 
+
+
+Connection String:
