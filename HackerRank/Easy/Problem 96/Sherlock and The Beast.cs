@@ -23,35 +23,15 @@ class Result
 
     public static void decentNumber(int n)
     {
-int threes = 0;
-        int fives = 0;
-        int originalN = n;
-
-        while (n > 0)
+for (int fives = n; fives >= 0; fives -= 5)
         {
-            if (n % 5 == 0 && n % 3 != 0)
+            if (fives % 3 == 0 && (n - fives) % 5 == 0)
             {
-                n -= 5;
-                fives += 5;
-            }
-            else
-            {
-                n -= 3;
-                threes += 3;
+                Console.WriteLine(new string('5', fives) + new string('3', n - fives));
+                return;
             }
         }
-
-        if (n == 0)
-        {
-            StringBuilder result = new StringBuilder();
-            result.Append('5', threes);
-            result.Append('3', fives);
-            Console.WriteLine(result.ToString());
-        }
-        else
-        {
-            Console.WriteLine("-1");
-        }
+        Console.WriteLine("-1");
     }
 
 }
