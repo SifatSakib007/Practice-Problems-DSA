@@ -1,0 +1,20 @@
+public static List<int> jimOrders(List<List<int>> orders)
+{
+    // List to store customer index, order number, prep time, and delivery time
+    List<(int customerIndex, int deliveryTime)> deliveryTimes = new List<(int, int)>();
+
+    for (int i = 0; i < orders.Count; i++)
+    {
+        int orderNumber = orders[i][0];
+        int prepTime = orders[i][1];
+        deliveryTimes.Add((i + 1, orderNumber + prepTime)); // Store customer index and delivery time
+    }
+
+    // Sort by delivery time, then by customer index
+    deliveryTimes.Sort((a, b) =>
+        a.deliveryTime == b.deliveryTime ? a.customerIndex.CompareTo(b.customerIndex) : a.deliveryTime.CompareTo(b.deliveryTime)
+    );
+
+    // Extract and return sorted customer indices
+    return deliveryTimes.Select(x => x.customerIndex).ToList();
+}
