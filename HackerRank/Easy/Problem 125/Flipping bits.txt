@@ -1,0 +1,38 @@
+using System;
+
+class Result
+{
+    /*
+     * Complete the 'flippingBits' function below.
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts LONG_INTEGER n as parameter.
+     */
+    public static long flippingBits(long n)
+    {
+        // Define the maximum value for 32-bit unsigned integers (all bits set to 1)
+        long maxUnsigned32BitValue = 4294967295;
+
+        // Flip the bits of n using XOR with the maximum value
+        return n ^ maxUnsigned32BitValue;
+    }
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        // Number of queries
+        int q = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < q; i++)
+        {
+            long n = Convert.ToInt64(Console.ReadLine());
+
+            // Get the result of flipping bits
+            long result = Result.flippingBits(n);
+
+            // Print the result
+            Console.WriteLine(result);
+        }
+    }
+}
