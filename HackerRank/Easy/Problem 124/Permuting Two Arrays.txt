@@ -1,0 +1,21 @@
+public static string twoArrays(int k, List<int> A, List<int> B)
+{
+    // Sort A in ascending order
+    A.Sort();
+
+    // Sort B in descending order using CompareTo
+    B.Sort((a, b) => b.CompareTo(a));
+
+    // Loop through each element to check if the condition is satisfied
+    for (int i = 0; i < A.Count; i++)
+    {
+        // Check if the sum of elements from both arrays is less than k
+        if (A[i] + B[i] < k)
+        {
+            return "NO"; // If any pair fails, return NO
+        }
+    }
+
+    // If all pairs satisfy the condition, return YES
+    return "YES";
+}
