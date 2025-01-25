@@ -1,0 +1,10 @@
+DECLARE @i INT  
+SET @i = 1  
+
+WHILE @i < 21  
+BEGIN  
+    DECLARE @stars NVARCHAR(50)  
+    SET @stars = REPLICATE('* ', @i)  
+    PRINT @stars  
+    SET @i = @i + 1  
+END;
